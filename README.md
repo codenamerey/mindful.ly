@@ -20,7 +20,7 @@ Mindful.ly runs on your agent subscription at no extra cost.
 
 #### Local-first
 
-No data leaves your machine (not including extra-application data). Every workspace and uploaded resource remains locally. Mindful.ly does not collect and sell your data.
+No data leaves your machine (not including extra-application data). Every workspace and uploaded resource remains local. Mindful.ly does not collect and sell your data.
 
 #### AI in where AI should be
 
