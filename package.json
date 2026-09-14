@@ -1,0 +1,23 @@
+{
+  "name": "mindfully",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "microservices/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace @mindfully/aiservice",
+    "dev:aiservice": "npm run start:dev --workspace @mindfully/aiservice",
+    "start:aiservice": "npm run start:prod --workspace @mindfully/aiservice"
+  },
+  "devDependencies": {
+    "nx": "^23.2.1"
+  },
+  "overrides": {
+    "smol-toml": "^1.8.0"
+  }
+}
