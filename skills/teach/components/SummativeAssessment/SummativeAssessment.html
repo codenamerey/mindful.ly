@@ -1,0 +1,38 @@
+<main class="summative-assessment" data-assessment-type="{{ checkpoint_or_final }}">
+  <aside class="assessment-brief" aria-labelledby="assessment-title">
+    <span class="assessment-badge">{{ checkpoint_or_final }} assessment · chunk {{ chunk_number }}/{{ chunk_count }}</span>
+    <h2 id="assessment-title">{{ assessment_title }}</h2>
+    <p>{{ purpose_without_preteaching }}</p>
+    <dl class="assessment-facts">
+      <div><dt>Coverage</dt><dd>{{ covered_lesson_ids_and_titles }}</dd></div>
+      <div><dt>Time</dt><dd>{{ daily_minutes }}-minute chunk</dd></div>
+      <div><dt>Conditions</dt><dd>{{ allowed_resources_and_attempt_rules }}</dd></div>
+    </dl>
+  </aside>
+
+  <section class="assessment-sittings" aria-labelledby="sittings-title">
+    <h2 id="sittings-title">This assessment chunk</h2>
+    <!-- Keep this chunk inside one normal study session. Do not reveal solutions or corrective feedback here. -->
+    <article class="assessment-sitting">
+      <span class="assessment-sitting__number">Chunk {{ chunk_number }} of {{ chunk_count }}</span>
+      <h3>{{ task_title }}</h3>
+      {{ integrated_task_prompt }}
+    </article>
+  </section>
+
+  <section class="assessment-submission" aria-labelledby="submission-title">
+    <h2 id="submission-title">Submit for teacher evaluation</h2>
+    {{ required_evidence_and_format }}
+    <h3>Passing standard</h3>
+    <p>{{ observable_passing_standard }}</p>
+    <ul>{{ acceptance_criteria_without_answers }}</ul>
+  </section>
+</main>
+
+<!-- Contract:
+  - Compose inside LessonDocument and retain TeacherQuestionPanel plus adjacent navigation.
+  - Use no LessonQuiz or immediate answer-revealing feedback.
+  - Assess only earlier IDs declared in assessment.coverage.
+  - Split multi-session assessments into consecutive plan entries. Each chunk has its own tracker submission and teacher decision.
+  - The teacher alone evaluates and completes the assessment assignment.
+-->

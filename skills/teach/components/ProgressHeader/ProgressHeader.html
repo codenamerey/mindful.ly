@@ -1,0 +1,13 @@
+<header class="progress-header">
+  <h1>{{ course_title }}</h1>
+  <div class="xp-progress">
+    <div class="xp-progress__label">{{ level_icon }} {{ level_name }}</div>
+    <div class="xp-progress__track" role="progressbar" aria-valuenow="{{ xp_percent }}" aria-valuemin="0" aria-valuemax="100">
+      <div class="xp-progress__fill" style="width:{{ xp_percent }}%"></div>
+    </div>
+    <div class="xp-progress__text">{{ xp_text }}</div>
+  </div>
+  <div class="progress-stat"><strong>{{ streak }}</strong>day streak</div>
+  <div class="progress-stat"><strong>{{ done }}/{{ total }}</strong>done</div>
+  <div class="progress-stat"><strong>{{ total_xp }}</strong>total XP</div>
+</header>

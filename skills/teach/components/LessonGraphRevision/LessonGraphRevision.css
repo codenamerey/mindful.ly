@@ -1,0 +1,6 @@
+.lesson-graph-revision{position:relative;margin:1.5rem auto}
+.lesson-graph-revision__surface>svg{display:block;width:100%;height:auto}
+.lesson-graph-revision__trigger{position:absolute;right:.5rem;top:.5rem}
+.lesson-graph-revision__composer{margin-top:.75rem;padding:.75rem;border:1px solid var(--teach-border,#d8deea);border-radius:.5rem;background:var(--teach-surface,#fff)}
+.lesson-graph-revision__composer label,.lesson-graph-revision__composer textarea{display:block;width:100%;box-sizing:border-box}
+.lesson-graph-revision__composer output{display:block;margin-top:.5rem}

@@ -1,0 +1,18 @@
+<section class="quiz" aria-labelledby="quiz-title">
+  <h2 id="quiz-title">Check your understanding</h2>
+  <!-- Repeat exactly three quiz-question blocks. -->
+  <article class="quiz-question" data-correct="{{ correct_value }}">
+    <p>{{ question }}</p>
+    <div class="quiz-options">
+      <label class="quiz-option" data-value="a" data-explain="{{ explanation_a }}"><input type="radio" name="q{{ number }}"> {{ option_a }}</label>
+      <label class="quiz-option" data-value="b" data-explain="{{ explanation_b }}"><input type="radio" name="q{{ number }}"> {{ option_b }}</label>
+      <label class="quiz-option" data-value="c" data-explain="{{ explanation_c }}"><input type="radio" name="q{{ number }}"> {{ option_c }}</label>
+      <label class="quiz-option" data-value="d" data-explain="{{ explanation_d }}"><input type="radio" name="q{{ number }}"> {{ option_d }}</label>
+    </div>
+    <div class="quiz-feedback" aria-live="polite"></div>
+  </article>
+  <div class="quiz-score" aria-live="polite"></div>
+</section>
+
+<!-- Lock each question after one answer, reveal the correct choice, and explain the
+     selected choice. Radio names are unique per question. -->

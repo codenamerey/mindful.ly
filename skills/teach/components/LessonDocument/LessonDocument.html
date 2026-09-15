@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson {{ number }} - {{ title }}</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="lesson-document">
+  <h1>Lesson {{ number }}: {{ title }}</h1>
+  <div class="lesson-meta">
+    <span>Phase: {{ phase }}</span><span>~{{ minutes }} min</span><span>{{ source_scope }}</span>
+  </div>
+  <p>{{ outcome_framing }}</p>
+  <main>
+    <!-- Numbered concept sections, worked examples, diagrams, and Callout components. -->
+    {{ lesson_sections }}
+    <!-- Include exactly one LessonQuiz with three questions. -->
+    {{ lesson_quiz }}
+    <h2>Your assignment for this lesson</h2>
+    <section class="assignment-block">{{ assignment }}</section>
+    <aside class="primary-source">{{ primary_source }}</aside>
+    <aside class="ask-teacher">{{ likely_sticking_points }}</aside>
+    <!-- TeacherQuestionPanel is injected by the shared lesson behavior. -->
+  </main>
+  <nav class="lesson-nav">{{ previous_link }}{{ next_link }}</nav>
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>
+
+<!-- Reading contract: 720px maximum content width, serif body at 18px/1.75,
+     system sans headings/UI, horizontally scrollable code, responsive SVGs and tables. -->

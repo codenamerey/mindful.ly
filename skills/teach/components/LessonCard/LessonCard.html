@@ -1,0 +1,15 @@
+<article class="lesson-card is-{{ status }}">
+  <div class="lesson-card__strip" aria-hidden="true"></div>
+  <div class="lesson-card__content">
+    <header class="lesson-card__header">
+      <span class="lesson-card__number">L{{ lesson_number }}</span>
+      <h3 class="lesson-card__title">{{ lesson_title }}</h3>
+      {{ locked_message }}
+      {{ open_lesson_link }}
+      {{ completion_or_fraction }}
+    </header>
+    <div class="lesson-card__assignments">
+      <!-- Keep assignment rows visible after completion. -->
+    </div>
+  </div>
+</article>

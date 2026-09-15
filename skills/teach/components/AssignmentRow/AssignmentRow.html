@@ -1,0 +1,10 @@
+<button class="assignment-row is-{{ status }}" type="button" aria-label="Open {{ title }}">
+  <span class="assignment-row__dot" aria-hidden="true"></span>
+  <span class="assignment-row__title">{{ title }}</span>
+  <span class="assignment-row__badges">
+    <span class="status-badge status-badge--{{ status }}">{{ status_label }}</span>
+    <span class="xp-badge">+{{ xp }} XP</span>
+  </span>
+</button>
+
+<!-- Status priority: complete > pass > fail > pending submission > not submitted. -->

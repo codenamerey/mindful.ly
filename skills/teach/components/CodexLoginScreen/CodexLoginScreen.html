@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex login required</title>
+  <link rel="stylesheet" href="/assets/codex-login.css">
+</head>
+<body class="codex-login-page">
+  <main class="codex-login-card">
+    <h1>Log into Codex to continue</h1>
+    <p>Lessons remain readable while signed out. Teacher review, questions, generation, and graph correction require Codex.</p>
+    <button id="codexLogin" type="button">Log into Codex</button>
+    <section id="codexLoginPanel" hidden>
+      <p><strong>1.</strong> Open the device page and sign in:</p>
+      <p><a id="codexDeviceLink" href="#" target="_blank" rel="noopener">Open Codex device page</a></p>
+      <p><strong>2.</strong> Enter this code:</p>
+      <p id="codexDeviceCode" class="codex-device-code">—</p>
+      <p>Waiting for approval…</p>
+    </section>
+    <div id="codexLoginStatus" role="status" aria-live="polite"></div>
+  </main>
+  <script type="module">import{connectCodexLogin}from'/assets/codex-login.js';connectCodexLogin()</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<aside class="achievement-sidebar" aria-labelledby="achievement-title">
+  <h2 id="achievement-title">Achievements</h2>
+  <div class="achievement-list">
+    <article class="achievement {{ earned ? 'is-earned' : 'is-locked' }}">
+      <span class="achievement__icon" aria-hidden="true">{{ icon }}</span>
+      <div>
+        <div class="achievement__title">{{ title }}</div>
+        <div class="achievement__description">{{ description }}</div>
+        <div class="achievement__xp">+{{ xp }} XP</div>
+      </div>
+    </article>
+  </div>
+</aside>
