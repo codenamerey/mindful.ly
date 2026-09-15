@@ -2,14 +2,18 @@ import { Controller } from "@nestjs/common";
 import { Codex } from "@openai/codex-sdk";
 @Controller()
 export class TeachController {
-  constructor(codex: Codex) {
+  constructor(private readonly codex: Codex = new Codex()) {
     this.codex = codex;
   }
 
-  teach(topic: string) {
-    const thread = this.codex.startThread();
-    const result = thread.run(`$teach ${topic}`);
+  async teach(topic: string) {
+    try {
+      const thread = this.codex.startThread();
+      const result = await thread.run(`$teach ${topic}`);
 
-    return result;
+      return result;
+    } catch (error) {
+      throw new Error("Teach skill invocation failed.");
+    }
   }
 }
