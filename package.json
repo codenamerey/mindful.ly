@@ -21,5 +21,8 @@
   },
   "overrides": {
     "smol-toml": "^1.8.0"
+  },
+  "dependencies": {
+    "@openai/codex-sdk": "^0.154.0"
   }
 }
