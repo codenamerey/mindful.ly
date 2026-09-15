@@ -1,22 +1,26 @@
 # Repository structure
 
-This repository uses npm workspaces to keep frontend and microservice code in
-one repository while giving each application and service its own package.
+This repository uses npm workspaces to keep the frontend and backend in one
+repository while giving each application its own package.
 
 ```text
 apps/
+  backend/              NestJS modular monolith
   frontend/             Frontend application workspace placeholder
-microservices/
-  aiservice/             NestJS TCP microservice
 docs/
-  REPOSITORY.md           Repository layout and development commands
+  REPOSITORY.md          Repository layout and development commands
 ```
 
-## AI microservice
+## Backend
 
-The NestJS service lives in `microservices/aiservice`. It uses TCP transport and
-listens on `MICROSERVICE_HOST` and `MICROSERVICE_PORT`, defaulting to
-`0.0.0.0:4001`. Its starter message handler responds to `health.check`.
+The NestJS modular monolith lives in `apps/backend`. It runs as one HTTP process
+and groups business capabilities into feature modules under `src/modules`.
+The health and teaching capabilities are independent Nest modules composed by
+the root application module.
+
+The backend listens on `HOST` and `PORT`, defaulting to `0.0.0.0:4000`. Use
+`GET /health` for health checks and `POST /teach` with a `topic` in the JSON body
+to start a teaching session.
 
 ## Development
 
@@ -25,13 +29,13 @@ dependencies from the repository root:
 
 ```sh
 npm install
-npm run dev:aiservice
+npm run dev:backend
 ```
 
-Build the AI microservice with `npm run build`. The workspace scripts target
-the `@mindfully/aiservice` package in `microservices/aiservice`.
+Build the backend with `npm run build`. The workspace scripts target the
+`@mindfully/backend` package in `apps/backend`.
 
 Nx Console can open this repository root as an Nx workspace. The root
 `nx.json` enables Nx task caching, and `npx nx show projects` lists detected
 projects. Run an inferred package script through Nx with
-`npx nx run @mindfully/aiservice:build`.
+`npx nx run @mindfully/backend:build`.

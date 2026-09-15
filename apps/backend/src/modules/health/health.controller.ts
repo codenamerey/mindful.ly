@@ -1,9 +1,8 @@
-import { Controller } from '@nestjs/common';
-import { MessagePattern } from '@nestjs/microservices';
+import { Controller, Get } from '@nestjs/common';
 
-@Controller()
+@Controller('health')
 export class HealthController {
-  @MessagePattern('health.check')
+  @Get()
   check() {
     return {
       status: 'ok',
