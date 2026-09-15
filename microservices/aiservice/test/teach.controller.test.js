@@ -1,8 +1,7 @@
-import assert from 'node:assert/strict';
-import { test } from 'node:test';
-import { HealthController } from '../dist/health.controller.js';
-
-test('prefixes teaching prompts with $teach', async () => {
+import assert from "node:assert/strict";
+import { test } from "node:test";
+import { TeachController } from "../src/teach.controller.ts";
+test("prefixes teaching prompts with $teach", async () => {
   const prompts = [];
   const codex = {
     startThread() {
@@ -13,9 +12,9 @@ test('prefixes teaching prompts with $teach', async () => {
       };
     },
   };
-  const controller = new HealthController(codex);
+  const controller = new TeachController(codex);
 
-  await controller.teach('Explain spaced repetition.');
+  await controller.teach("Explain spaced repetition.");
 
-  assert.deepEqual(prompts, ['$teach Explain spaced repetition.']);
+  assert.deepEqual(prompts, ["$teach Explain spaced repetition."]);
 });
