@@ -11,13 +11,18 @@
   ],
   "scripts": {
     "build": "npm run build --workspace @mindfully/aiservice",
+    "test": "npm run test --workspace @mindfully/aiservice",
     "dev:aiservice": "npm run start:dev --workspace @mindfully/aiservice",
     "start:aiservice": "npm run start:prod --workspace @mindfully/aiservice"
   },
   "devDependencies": {
-    "nx": "^23.2.1"
+    "nx": "^23.2.1",
+    "tsx": "^4.23.13"
   },
   "overrides": {
     "smol-toml": "^1.8.0"
+  },
+  "dependencies": {
+    "@codex-native/sdk": "^0.0.38"
   }
 }
