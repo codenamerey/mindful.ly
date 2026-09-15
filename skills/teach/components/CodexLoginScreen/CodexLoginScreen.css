@@ -1,0 +1,10 @@
+:root{color-scheme:light;font-family:system-ui,sans-serif}
+body.codex-login-page{margin:0;min-height:100vh;display:grid;place-items:center;background:#f5f7fb;color:#172033}
+.codex-login-card{width:min(30rem,calc(100% - 2rem));box-sizing:border-box;padding:2rem;border:1px solid #d8deea;border-radius:1rem;background:#fff;box-shadow:0 8px 30px #17203318;text-align:center}
+.codex-login-card h1{margin-top:0}
+.codex-login-card button{border:0;border-radius:.5rem;padding:.7rem 1rem;background:#315efb;color:#fff;font:inherit;cursor:pointer}
+.codex-login-card button:disabled{cursor:wait;opacity:.65}
+#codexLoginPanel{margin-top:1rem;text-align:left}
+#codexLoginStatus{min-height:1.5em;margin-top:1rem;color:#5d6678}
+.codex-device-code{user-select:all;font-family:ui-monospace,monospace;font-size:1.6rem;font-weight:700;letter-spacing:.12em;text-align:center;padding:.5rem;border:1px dashed #b9c4d8;border-radius:.5rem;background:#eef1f8}
+.codex-login-card a{color:#315efb;word-break:break-all}

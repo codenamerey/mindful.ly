@@ -1,0 +1,16 @@
+.teacher-qa{margin:2.5rem 0 1.5rem;padding-top:1.5rem;border-top:2px solid var(--teach-primary)}
+.teacher-qa h2{margin-top:0}.teacher-qa-history{display:flex;flex-direction:column;gap:.9rem;margin:1rem 0}
+.teacher-qa-entry{border-left:3px solid var(--teach-border);padding:.15rem 0 .15rem .9rem;font: .88rem/1.55 var(--teach-ui-font)}
+.teacher-qa-question{font-weight:650;white-space:pre-wrap}.teacher-qa-answer{margin-top:.35rem;white-space:normal;overflow-wrap:anywhere}
+.teacher-qa-answer p{margin:.45rem 0}.teacher-qa-answer ul,.teacher-qa-answer ol{margin:.45rem 0 .45rem 1.3rem}
+.teacher-qa-answer code{font-family:var(--teach-mono-font);background:var(--teach-code-bg);padding:.08rem .25rem;border-radius:3px}
+.teacher-qa-answer pre{overflow:auto;padding:.65rem;background:var(--teach-code-bg);border-radius:4px}.teacher-qa-answer pre code{padding:0;background:none}
+.teacher-qa-answer svg{display:block;width:100%;max-width:680px;height:auto;margin:1rem auto}.teacher-qa-answer mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:.35rem 0}
+.teacher-qa-state{margin-top:.35rem;color:var(--teach-muted);font-size:.78rem}.teacher-qa-entry.error{border-left-color:var(--teach-failed)}.teacher-qa-entry.error .teacher-qa-state{color:var(--teach-failed)}
+.teacher-qa-form textarea{width:100%;min-height:90px;resize:vertical;border:1px solid var(--teach-border);border-radius:6px;padding:.7rem .8rem;background:var(--teach-surface);color:var(--teach-text);font:.9rem/1.5 var(--teach-ui-font)}
+.teacher-qa-file-row{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;margin-top:.55rem;color:var(--teach-muted);font:.78rem var(--teach-ui-font)}
+.teacher-qa-file-button{cursor:pointer;border:1px solid var(--teach-border);border-radius:5px;padding:.35rem .6rem;background:var(--teach-surface);color:var(--teach-primary);font-weight:650}
+.teacher-qa-attachments{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}.teacher-qa-attachment{display:inline-flex;align-items:center;gap:.35rem;max-width:100%;padding:.25rem .45rem;background:var(--teach-code-bg);border:1px solid var(--teach-border);border-radius:4px;font:.75rem var(--teach-ui-font);overflow-wrap:anywhere}
+.teacher-qa-attachment button{border:0;background:transparent;color:var(--teach-muted);font-size:1rem;line-height:1;cursor:pointer}.teacher-qa-question-images{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,160px));gap:.5rem;margin-top:.55rem}
+.teacher-qa-question-images img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:var(--teach-code-bg);border:1px solid var(--teach-border);border-radius:4px}.teacher-qa-actions{display:flex;justify-content:flex-end;margin-top:.55rem}
+.teacher-qa-submit{border:0;border-radius:5px;background:var(--teach-primary);color:#fff;padding:.48rem .85rem;font:650 .82rem var(--teach-ui-font);cursor:pointer}.teacher-qa-submit:disabled{opacity:.55;cursor:default}

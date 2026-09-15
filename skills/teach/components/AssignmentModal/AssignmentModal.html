@@ -1,0 +1,51 @@
+<div class="assignment-dialog-backdrop" hidden>
+  <section class="assignment-dialog" role="dialog" aria-modal="true" aria-labelledby="assignment-title">
+    <header class="assignment-dialog__header">
+      <div>
+        <div class="assignment-dialog__lesson">{{ lesson_id }}</div>
+        <h2 id="assignment-title">{{ assignment_title }}</h2>
+      </div>
+      <button class="icon-button" type="button" aria-label="Close assignment">&times;</button>
+    </header>
+    <div class="assignment-dialog__body">
+      <div class="assignment-description">{{ description }}</div>
+      <section aria-labelledby="criteria-title">
+        <h3 class="section-label" id="criteria-title">Acceptance criteria</h3>
+        <ul>{{ criteria_items }}</ul>
+      </section>
+      <section class="submission-control" aria-labelledby="submission-title">
+        <h3 class="section-label" id="submission-title">{{ has_submission ? 'Resubmit work' : 'Submit your work' }}</h3>
+        <p class="submission-control__hint">On revision, unchanged evidence stays attached. Add only corrected work, or remove an image from this evaluation with its &times; button.</p>
+        <div class="evidence-tray" aria-label="Evidence included in this evaluation">
+          <figure class="evidence-thumbnail" data-evidence-id="{{ evidence_id }}">
+            <button class="evidence-thumbnail__preview" type="button" aria-label="Expand {{ filename }}" aria-haspopup="dialog">
+              <img src="{{ thumbnail_url }}" alt="{{ filename }}" loading="lazy">
+            </button>
+            <button class="evidence-thumbnail__remove" type="button" aria-label="Remove {{ filename }} from this evaluation">&times;</button>
+            <figcaption>{{ filename }}</figcaption>
+          </figure>
+        </div>
+        <!-- Use tabs for typed evidence and file evidence. File input supports selection,
+             drag/drop, and clipboard paste. Render carried-forward and pending images in
+             the evidence tray. Submit explicit kept_evidence_ids and removed_evidence_ids;
+             absence from multipart files never means removal. -->
+        {{ submission_tabs }}
+      </section>
+      <!-- Render teacher feedback as sanitized GitHub-flavored Markdown. -->
+      <section class="current-review">{{ current_submission_and_teacher_review }}</section>
+      <!-- Include SubmissionHistory when prior attempts exist. -->
+    </div>
+    <footer class="assignment-dialog__footer">{{ contextual_status_and_actions }}</footer>
+  </section>
+</div>
+
+<div class="evidence-lightbox" role="dialog" aria-modal="true" aria-labelledby="evidence-lightbox-title" hidden>
+  <button class="icon-button evidence-lightbox__close" type="button" aria-label="Close image preview">&times;</button>
+  <h3 id="evidence-lightbox-title" class="visually-hidden">Image preview</h3>
+  <img src="{{ full_image_url }}" alt="{{ filename }}">
+</div>
+
+<!-- Hide submission controls only after persistent completion. Keep resubmission available
+     while pending or failed. The lightbox closes on its button, Escape, or backdrop click;
+     trap focus while open and restore focus to its thumbnail. Restore focus to the opening
+     AssignmentRow when the assignment dialog closes. -->

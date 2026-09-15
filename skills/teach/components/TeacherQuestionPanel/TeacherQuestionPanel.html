@@ -1,0 +1,46 @@
+<section class="teacher-qa" aria-labelledby="teacher-qa-title">
+  <h2 id="teacher-qa-title">Ask the teacher</h2>
+  <div class="teacher-qa-history" aria-live="polite">
+    <article class="teacher-qa-entry {{ status === 'error' ? 'error' : '' }}">
+      <div class="teacher-qa-question">{{ escaped_question_or_image_label }}</div>
+      <div class="teacher-qa-question-images">
+        <a href="{{ full_image_url }}" target="_blank" rel="noopener">
+          <img src="{{ thumbnail_url }}" alt="{{ escaped_file_name }}">
+        </a>
+      </div>
+      <!-- Sanitize GFM + constrained inline SVG, then re-typeset MathJax. -->
+      <div class="teacher-qa-answer">{{ sanitized_teacher_answer }}</div>
+      <div class="teacher-qa-state">{{ pending_or_error_state }}</div>
+    </article>
+  </div>
+  <form class="teacher-qa-form">
+    <label class="sr-only" for="teacher-question">Question for the teacher</label>
+    <textarea id="teacher-question" maxlength="4000" placeholder="Ask about this lesson"></textarea>
+    <div class="teacher-qa-attachments" aria-live="polite">
+      <span class="teacher-qa-attachment">
+        {{ escaped_selected_file_name }}
+        <button type="button" aria-label="Remove {{ escaped_selected_file_name }}">&times;</button>
+      </span>
+    </div>
+    <div class="teacher-qa-file-row">
+      <label class="teacher-qa-file-button">
+        Attach images
+        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp,image/bmp" multiple hidden>
+      </label>
+      <span>or paste screenshots with Ctrl+V</span>
+    </div>
+    <div class="teacher-qa-actions">
+      <button class="teacher-qa-submit" type="submit">Ask teacher</button>
+    </div>
+  </form>
+</section>
+
+<!-- Behavior contract:
+  - Inject immediately before .lesson-nav, so the panel has a stable lesson-ending location.
+  - Permit an image-only question and up to five picker- or clipboard-supplied images.
+  - Show every selected filename as a removable chip; reset the native input after merging.
+  - Persist questions and files, and reload on the shared SSE state event without refresh.
+  - Link every historical image/thumbnail in a new tab with rel=noopener.
+  - Render teacher answers as sanitized GFM, constrained responsive SVG, and MathJax.
+  - Disable submit while posting; expose pending and error states in the live history region.
+-->

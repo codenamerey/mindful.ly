@@ -1,0 +1,23 @@
+:root {
+  --teach-bg: #fdfcf8;
+  --teach-surface: #ffffff;
+  --teach-border: #e5e0d8;
+  --teach-text: #1a1a18;
+  --teach-muted: #6b6860;
+  --teach-primary: #1a5276;
+  --teach-primary-tint: #d6eaf8;
+  --teach-code-bg: #f4f1eb;
+  --teach-complete: #1e5631;
+  --teach-complete-tint: #d5f5e3;
+  --teach-submitted: #e67e22;
+  --teach-warning: #7d6608;
+  --teach-warning-tint: #fef9e7;
+  --teach-failed: #922b21;
+  --teach-failed-tint: #fdecea;
+  --teach-assignment: #7b2d8b;
+  --teach-ui-font: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --teach-reading-font: Georgia, "Times New Roman", serif;
+  --teach-mono-font: "JetBrains Mono", "Fira Mono", "Courier New", monospace;
+  --teach-content-width: 720px;
+  --teach-radius: 6px;
+}

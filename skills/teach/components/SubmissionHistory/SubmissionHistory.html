@@ -1,0 +1,22 @@
+<section class="submission-history" aria-labelledby="history-title">
+  <h3 class="section-label" id="history-title">Previous attempts ({{ count }})</h3>
+  <ol class="submission-history__list">
+    <li class="submission-attempt is-{{ status }}">
+      <div class="submission-attempt__header">
+        <strong>Attempt {{ attempt_number }}</strong>
+        <span class="status-badge status-badge--{{ status }}">{{ status_label }}</span>
+        <time datetime="{{ submitted_at_iso }}">{{ submitted_at_display }}</time>
+      </div>
+      <div class="submission-attempt__evidence">
+        {{ compact_evidence_thumbnails_opening_in_accessible_lightbox }}
+        <span>{{ new_carried_forward_and_removed_counts }}</span>
+      </div>
+      <!-- Parse and sanitize feedback as GitHub-flavored Markdown before insertion. -->
+      <div class="submission-attempt__feedback">{{ teacher_feedback_and_annotation_link }}</div>
+    </li>
+  </ol>
+</section>
+
+<!-- Attempt history is immutable. Its thumbnails have no remove control. Label each item as
+     new, carried forward, or removed for that attempt; removed means excluded from that
+     evaluation, not deleted from history. -->

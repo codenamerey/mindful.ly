@@ -1,0 +1,10 @@
+<div class="lesson-graph-revision" data-lesson-id="{{ lesson_id }}" data-graph-index="{{ graph_index }}">
+  <div class="lesson-graph-revision__surface">{{ inline_svg }}</div>
+  <button class="lesson-graph-revision__trigger" type="button" aria-expanded="false">Write better graph</button>
+  <form class="lesson-graph-revision__composer" hidden>
+    <label>What is confusing about this graph?<textarea maxlength="2000" rows="3"></textarea></label>
+    <button type="button" data-cancel>Cancel</button>
+    <button type="submit">Send and rewrite</button>
+    <output role="status" aria-live="polite"></output>
+  </form>
+</div>
